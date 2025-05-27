@@ -1,0 +1,286 @@
+/* Estilos Gerais */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-bg: #1a1a2e;
+    --light-bg: #282846;
+    --text-color: #e0e0e0;
+    --highlight-color: #ffc107;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: var(--light-bg);
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--highlight-color);
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.btn-small {
+    background: var(--secondary-color);
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.btn-small:hover {
+    background: #5a6268;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500x500/000000/FFFFFF?text=Hero+Image') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Seções de Jogos */
+.section-games {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--dark-bg);
+}
+
+.section-games h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.game-card {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    height: 200px; /* Altura fixa para imagens de jogos */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.game-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+}
+
+.game-card p {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.game-card.featured {
+    grid-column: 1 / -1; /* Ocupa a largura total da grade */
+    max-width: 600px; /* Limita a largura do card em destaque */
+    margin: auto;
+    background-color: #3e2e50; /* Cor diferente para destaque */
+    border: 2px solid var(--highlight-color);
+}
+
+.game-card.featured img {
+    height: 250px;
+}
+
+/* Seção de Contato */
+.contact-section {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-section textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-section .btn {
+    align-self: center;
+    width: 50%;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-bg);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid var(--primary-color);
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1,
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        padding: 0;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+    }
+
+    .game-card.featured {
+        width: 90%; /* Ajusta a largura para telas menores */
+    }
+}
